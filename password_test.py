@@ -1,5 +1,5 @@
 import unittest
-from password import User
+from password import User, Credentials
 
 class TestUser(unittest.TestCase):
     '''
@@ -88,20 +88,13 @@ class Test_Credentials(unittest.TestCase):
     '''
     test to define all credentials class instances.
     '''
-
-    def test_check_user(user):
+    def setUp(self):
         '''
-        function to confirm user login information
+        function to create user account before each test
         '''
-        self.new_user = User('Hafsa','Earlie','haffycarks','half.sir@earl.com')
-        self.new_user.save_user()
-        test_user = User('Hafsa','Earlie','haffycarks','half.sir@earl.com')
-        test_user.save_user()
+        self.new_credentials = Credentials('whaat!','Waasuup','instanglam','whaashanglam')
 
-        for user in user_list:
-            if user.first_name == test_user.first_name and user.password == test_user.password:
-                current_user == user.first_name
-                    return current_user
+    
 
 if __name__ == '__main__':
     unittest.main()

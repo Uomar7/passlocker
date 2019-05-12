@@ -138,6 +138,15 @@ class Test_Credentials(unittest.TestCase):
         '''
         self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
 
+    def test_find_user_name(self):
+        '''
+        function to find user credentials using by User name
+        '''
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials('code','python','fb','cofthon')
+        test_credentials.save_credentials()
+        found_credentials = Credentials.find_by_user_name('code')
+        self.assertEqual(found_credentials,test_credentials)
     
 
 if __name__ == '__main__':

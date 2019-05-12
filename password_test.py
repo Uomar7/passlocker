@@ -84,5 +84,24 @@ class TestUser(unittest.TestCase):
         user_exists = User.user_exists('python')
         self.assertTrue(user_exists)
 
+class Test_Credentials(unittest.TestCase):
+    '''
+    test to define all credentials class instances.
+    '''
+
+    def test_check_user(user):
+        '''
+        function to confirm user login information
+        '''
+        self.new_user = User('Hafsa','Earlie','haffycarks','half.sir@earl.com')
+        self.new_user.save_user()
+        test_user = User('Hafsa','Earlie','haffycarks','half.sir@earl.com')
+        test_user.save_user()
+
+        for user in user_list:
+            if user.first_name == test_user.first_name and user.password == test_user.password:
+                current_user == user.first_name
+                    return current_user
+
 if __name__ == '__main__':
     unittest.main()

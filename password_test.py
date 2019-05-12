@@ -91,7 +91,7 @@ class Test_Credentials(unittest.TestCase):
     def tearDown(self): # tearDown method to clean up after every test has been run.
 
         Credentials.credentials_list = []
-        
+
     def setUp(self):
         '''
         function to create user account before each test
@@ -120,6 +120,17 @@ class Test_Credentials(unittest.TestCase):
         test_credentials = Credentials('code','python','fb','cofthon')
         test_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),2)
+
+    def test_delete_credentials(self):
+        '''
+        test to check deletion of credentials
+        '''
+
+        self.new_credentials.save_credentials()
+        test_Credentials = Credentials('code','python','fb','cofthon')
+        test_Credentials.save_credentials()
+        self.new_credentials.delete_credentials()
+        self.assertEqual(len(self.Credentials.credentials_list),1)
 
 
     

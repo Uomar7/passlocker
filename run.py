@@ -14,3 +14,10 @@ def save_account(account):
     '''
     account.save_user()
 
+def delete_account(account):
+    '''
+    function to dekete user account
+    '''
+    account.delete_user()
+ 
+

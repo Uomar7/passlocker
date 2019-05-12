@@ -130,7 +130,7 @@ class Test_Credentials(unittest.TestCase):
         test_Credentials = Credentials('code','python','fb','cofthon')
         test_Credentials.save_credentials()
         self.new_credentials.delete_credentials()
-        self.assertEqual(len(self.Credentials.credentials_list),1)
+        self.assertEqual(len(Credentials.credentials_list),1)
 
 
     

@@ -38,3 +38,14 @@ class User:
         method that returns the user list.
         '''
         return cls.user_list
+    
+    @classmethod
+    def user_exists(cls,last_name):
+        '''
+        test to check if a user exists in our users list.
+        '''
+        for user in cls.user_list:
+            if user.last_name == last_name:
+                return True
+        
+        return False

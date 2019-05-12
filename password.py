@@ -22,3 +22,5 @@ class User:
         self.last_name = last_name
         self.password = password
         self.email = email
+    
+    

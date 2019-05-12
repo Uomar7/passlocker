@@ -61,9 +61,10 @@ class TestUser(unittest.TestCase):
         test to search and find an account using the first name.
         '''
         self.new_user.save_user()
-        test_user = test_user = User('code','python','errorperience','code.python@pyode.com')
+        test_user = User('code','python','errorperience','code.python@pyode.com')
         test_user.save_user()
-        found_user = User.find_by_name('code.python@pyode.com')
+        
+        found_user = User.find_by_name('code')
         self.assertEqual(found_user.first_name,test_user.first_name)
 
 if __name__ == '__main__':

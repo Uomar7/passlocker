@@ -23,4 +23,11 @@ class User:
         self.password = password
         self.email = email
     
-    
+    @classmethod
+    def find_by_name(cls,first_name):
+        '''
+        method to locate a user account using the users first name.
+        '''
+        for user in cls.user_list:
+            if user.first_name == first_name:
+                return user

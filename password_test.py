@@ -1,2 +1,26 @@
 import unittest
-from user import User
+from password import User
+
+class TestUser(unittest.TestCase):
+    '''
+    test class that defines test cases for the user class behaviours.
+    Args:
+        unittest.TestCase: Test class that helps in creating test cases.
+    '''
+    def setUp(self):
+        '''
+        set uf method to run before evry test.
+        '''
+
+        self.new_user = User('Uomar','Earlie','Shaaddyyy','uomar.earlie@imperial.com')
+    def test_init(self):
+        '''
+        test init test case to test if the object is initialized properly.
+        '''
+        self.assertEqual(self.new_user.first_name,'Uomar')
+        self.assertEqual(self.new_user.last_name,'Earlie')
+        self.assertEqual(self.new_user.password,'Shaaddyyy')
+        self.assertEqual(self.new_user.email,'uomar.earlie@imperial.com')
+
+if __name__ == '__main__':
+    unittest.main()

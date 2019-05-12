@@ -88,6 +88,10 @@ class Test_Credentials(unittest.TestCase):
     '''
     test to define all credentials class instances.
     '''
+    def tearDown(self): # tearDown method to clean up after every test has been run.
+
+        Credentials.credentials_list = []
+        
     def setUp(self):
         '''
         function to create user account before each test

@@ -94,6 +94,21 @@ class Test_Credentials(unittest.TestCase):
         '''
         self.new_credentials = Credentials('whaat!','Waasuup','instanglam','whaashanglam')
 
+    def test_credentials_init(self):
+        self.assertEqual(self.new_credentials.user_name,'whaat!')
+        self.assertEqual(self.new_credentials.account_name,'Waasuup')
+        self.assertEqual(self.new_credentials.site_name,'instanglam')
+        self.assertEqual(self.new_credentials.site_password,'whaashanglam')
+    
+    def test_save_credentials(self):
+        '''
+        test to check the saving functionality of credentials instances.
+        '''
+
+        self.new_credentials.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list),1)
+
+
     
 
 if __name__ == '__main__':

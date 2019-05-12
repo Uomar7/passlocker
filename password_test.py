@@ -107,6 +107,15 @@ class Test_Credentials(unittest.TestCase):
 
         self.new_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),1)
+    
+    def test_save_multiple_credentials(self):
+        '''
+        test to check if the app saves multiple credentials
+        '''
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials('code','python','fb','cofthon')
+        test_credentials.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list),2)
 
 
     

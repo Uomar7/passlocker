@@ -7,6 +7,8 @@ class TestUser(unittest.TestCase):
     Args:
         unittest.TestCase: Test class that helps in creating test cases.
     '''
+    user_list = []
+    
     def setUp(self):
         '''
         set uf method to run before evry test.

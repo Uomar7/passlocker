@@ -31,6 +31,17 @@ class TestUser(unittest.TestCase):
         '''
         self.new_user.save_user()   #saving new users to our user list.
         self.assertEqual(len(User.user_list),1)
+    
+    def test_save_multiple_user(self):
+        '''
+        test to check if the app saves multiple users.
+        '''
+        self.new_user.save_user()
+        test_user = User('code','python','errorperience','code.python@pyode.com')
+        test_user.save_user()
+
+        self.assertEqual(len(User.user_list),2)
+
 
 
 

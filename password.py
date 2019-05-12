@@ -83,5 +83,14 @@ class Credentials:
         '''
         return cls.credentials_list
     
+    @classmethod
+    def find_by_user_name(cls,user_name):
+        '''
+        method to find credentials using the username.
+        '''
+        for credential in cls.credentials_list:
+            if credential.user_name == user_name:
+                return credential
+    
 
 

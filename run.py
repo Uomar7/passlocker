@@ -25,3 +25,10 @@ def delete_account(account):
      function to display all user accounts.
      '''
      return User.display_users()
+    
+def account_verification(first_name,password):
+    '''
+    function to verify an account login.
+    '''
+    verified_user = Credentials.confirm_user(first_name,password)
+    return verified_user

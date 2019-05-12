@@ -16,6 +16,7 @@ class User:
         method to delete user from the user list.
         '''
         User.user_list.remove(self)
+    
 
     def __init__(self,first_name,last_name,password,email):
         self.first_name = first_name
@@ -31,7 +32,16 @@ class User:
         for user in cls.user_list:
             if user.first_name == first_name:
                 return user
-    
+    @classmethod
+    def confirm_user(cls,first_name,last_name):
+        '''
+        method to confirm the availability of user.
+        '''
+        for user in cls.user_list:
+            if user.first_name == first_name and user.password == password:
+                return user
+
+
     @classmethod
     def display_users(cls):
         '''

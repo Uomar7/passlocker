@@ -7,7 +7,10 @@ class TestUser(unittest.TestCase):
     Args:
         unittest.TestCase: Test class that helps in creating test cases.
     '''
-    user_list = []
+
+    def tearDown(self): # tearDown method to clean up after every test has been run.
+
+        User.user_list = []
     
     def setUp(self):
         '''
@@ -38,8 +41,8 @@ class TestUser(unittest.TestCase):
         '''
         self.new_user.save_user()
         test_user = User('code','python','errorperience','code.python@pyode.com')
+        
         test_user.save_user()
-
         self.assertEqual(len(User.user_list),2)
 
 

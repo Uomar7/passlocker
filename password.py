@@ -54,12 +54,20 @@ class Credentials:
     '''
     class that generates new credentials objects.
     '''
+    credentials_list = []
     
     def __init__(self,user_name,account_name,site_name,site_password):
-        
+
         self.user_name = user_name
         self.account_name = account_name
         self.site_name = site_name
         self.site_password = site_password
+    
+    def save_credentials(self):
+        '''
+        function to save a user credentials
+        '''
+
+        Credentials.credentials_list.append(self)
 
 

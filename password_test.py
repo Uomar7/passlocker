@@ -73,5 +73,16 @@ class TestUser(unittest.TestCase):
         '''
         self.assertEqual(User.display_users(),User.user_list)
 
+    def test_user_exists(self):
+        '''
+        test to return a boolean whether a contact exists or not.
+        '''
+        self.new_user.save_user()
+        test_user = User('code','python','errorperience','code.python@pyode.com')
+        test_user.save_user()
+        
+        user_exists = User.user_exists('python')
+        self.assertTrue(user_exists)
+
 if __name__ == '__main__':
     unittest.main()

@@ -45,8 +45,16 @@ class TestUser(unittest.TestCase):
         test_user.save_user()
         self.assertEqual(len(User.user_list),2)
 
+    def test_delete_user(self):
+        '''
+        test to check if the app can delete a user from our user list. 
+        '''
 
-
+        self.new_user.save_user()
+        test_user = User('code','python','errorperience','code.python@pyode.com')
+        test_user.save_user()
+        self.new_user.delete_user() #deleting a user from our user list.
+        self.assertEqual(len(User.user_list),1)
 
 
 if __name__ == '__main__':

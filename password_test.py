@@ -63,9 +63,15 @@ class TestUser(unittest.TestCase):
         self.new_user.save_user()
         test_user = User('code','python','errorperience','code.python@pyode.com')
         test_user.save_user()
-        
+
         found_user = User.find_by_name('code')
         self.assertEqual(found_user.first_name,test_user.first_name)
+    
+    def test_display_users(self):
+        '''
+        test to check if the app will return a list of all the user registered.
+        '''
+        self.assertEqual(User.display_users(),User.user_list)
 
 if __name__ == '__main__':
     unittest.main()

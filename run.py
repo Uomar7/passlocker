@@ -30,8 +30,7 @@ def account_verification(first_name,password):
     '''
     function to verify an account login.
     '''
-    verified_user = Credentials.confirm_user(first_name,password)
-    return verified_user
+    return User.confirm_user(first_name,password)
 
 def create_credentials(user_name,account_name,site_name,site_password):
     '''
@@ -51,5 +50,11 @@ def display_credentials(user_name,site_name):
     function to display the list of credentials
     '''
     Credentials.display_credentials(user_name,site_name)
+
+def find_credentials(user_name):
+    '''
+    function to search for credentials
+    '''
+    return Credentials.find_by_user_name(user_name)
 
 

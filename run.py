@@ -20,4 +20,8 @@ def delete_account(account):
     '''
     account.delete_user()
  
-
+ def display_accounts():
+     '''
+     function to display all user accounts.
+     '''
+     return User.display_users()

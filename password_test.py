@@ -131,7 +131,12 @@ class Test_Credentials(unittest.TestCase):
         test_Credentials.save_credentials()
         self.new_credentials.delete_credentials()
         self.assertEqual(len(Credentials.credentials_list),1)
-
+    
+    def test_display_credentials(self):
+        '''
+        test to display all the available credentials.
+        '''
+        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
 
     
 

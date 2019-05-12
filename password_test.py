@@ -30,7 +30,7 @@ class TestUser(unittest.TestCase):
         A test to test if the user  is saved into the list.
         '''
         self.new_user.save_user()   #saving new users to our user list.
-        self.assertEqual(len(user_list),1)
+        self.assertEqual(len(User.user_list),1)
 
 
 

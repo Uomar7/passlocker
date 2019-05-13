@@ -19,6 +19,12 @@ def delete_account(account):
     function to dekete user account
     '''
     account.delete_user()
+
+def find_account(fname):
+    '''
+    function to search account.
+    '''
+    return User.find_by_name(fname)
  
 def display_accounts():
      '''
@@ -26,11 +32,11 @@ def display_accounts():
      '''
      return User.display_users()
     
-def account_verification(first_name,password):
+def account_verification(first_name,last_name,password):
     '''
     function to verify an account login.
     '''
-    return User.confirm_user(first_name,password)
+    return User.confirm_user(first_name,last_name,password)
 
 def create_credentials(user_name,account_name,site_name,site_password):
     '''
@@ -97,16 +103,19 @@ def main():
             print('put first name and password')
             print('enter first name')
             fname = input()
+            print('enter last name')
+            lname = input()
             print('enter password')
             password = input()
 
-            if fname and password == account_verification(fname,password):
+            if account_verification(fname,lname,password):
+                search_user = find_account(fname)
                 
-                print(f'you are logged in {fname} {lname}')
+                print(f'you are logged in {search_user.first_name} {search_user.last_name}')
 
                 while True:
                     print('use short codes to navigate: nc- create new credentials, dc- display credentials, delc- delete credentials,fn- find credentials, ex- log out')
-
+                    short_code = input()
                     if short_code == 'nc':
                         print('create new credentials')
                         print('-'*10)
@@ -140,6 +149,7 @@ def main():
                         
                         else:
                             print('No credentials made yet. type dc- to create credentials')
+                        
 
                     elif short_code == 'delc':
 
@@ -177,6 +187,11 @@ def main():
                             
             else:
                 print('you dont have an account with us!')
+                break
+        
+    else:
+        print('follow protocol')
+
 
 if __name__ == '__main__':
     main()

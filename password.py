@@ -33,13 +33,15 @@ class User:
             if user.first_name == first_name:
                 return user
     @classmethod
-    def confirm_user(cls,first_name,last_name):
+    def confirm_user(cls,first_name,last_name,password):
         '''
         method to confirm the availability of user.
         '''
         for user in cls.user_list:
-            if user.first_name == first_name and user.password == password:
+            if user.first_name == first_name and user.password == password and user.last_name == last_name:
                 return user
+        
+        return False
 
 
     @classmethod

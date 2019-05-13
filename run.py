@@ -49,13 +49,13 @@ def save_credentials(credentials):
     '''
     function to save credentials
     '''
-    Credentials.save_credentials(credentials)
+    credentials.save_credentials()
 
-def display_credentials(user_name,site_name):
+def display_credentials():
     '''
     function to display the list of credentials
     '''
-    Credentials.display_credentials(user_name,site_name)
+    return Credentials.display_credentials()
 
 def find_credentials(user_name):
     '''
@@ -130,9 +130,9 @@ def main():
                         site_name = input()
 
                         print('site password...')
-                        password = input()
+                        site_password = input()
 
-                        save_credentials(create_credentials(user_name,account_name,site_name,password))
+                        save_credentials(create_credentials(user_name,account_name,site_name,site_password))
                         print('\n')
                         print(f'new credentials {user_name} {site_name} created!!')
 
@@ -144,7 +144,9 @@ def main():
                             print('\n')
                             
                             for credential in display_credentials():
-                                print(f'{credential.user_name} {credential.account_name}  {credential.site_name}.......... {credential.site_password}')
+                                print(f'{credential.user_name} {credential.site_name}.......... {credential.site_password}')
+                                print('\n')
+
                                 print('\n')
                         
                         else:

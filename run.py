@@ -100,9 +100,9 @@ def main():
             print('enter password')
             password = input()
 
-            if fname == account_verification(first_name) and password == account_verification(password):
-                return confirm_user(fname,password)
-                print(f'you are logged in {user.first_name} {user.last_name}')
+            if fname and password == account_verification(fname,password):
+                
+                print(f'you are logged in {fname} {lname}')
 
                 while True:
                     print('use short codes to navigate: nc- create new credentials, dc- display credentials, delc- delete credentials,fn- find credentials, ex- log out')
